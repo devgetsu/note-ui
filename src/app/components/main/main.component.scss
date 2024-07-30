@@ -1,0 +1,397 @@
+* {
+    box-sizing: border-box;
+}
+
+section {
+    padding: 0px auto;
+}
+
+.container {
+    padding: 0px auto;
+    background-color: #fbfbfb;
+}
+
+.summa {
+
+    width: 100%;
+    padding: 0px auto;
+
+    .cards {
+        display: flex;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        padding: 10px;
+    }
+
+    .cards1 {
+        display: flex;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        padding: 10px;
+    }
+}
+
+.card0 {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    width: 30%;
+    height: 90px;
+    background-color: #fff;
+    box-shadow: 0px 0px 5px 0px;
+
+    border-radius: 10px;
+
+    span {
+        font-size: 30px;
+        font-weight: 500;
+        color: #53b4d4;
+    }
+
+    p {
+        font-size: 15px;
+    }
+
+    img {
+        color: #53b4d4;
+        text-align:center;
+        height: 50px;
+    }
+}
+
+.card1 {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    width: 30%;
+    height: 90px;
+    background-color: #fff;
+    box-shadow: 0px 0px 5px 0px;
+
+    border-radius: 10px;
+
+    span {
+        font-size: 30px;
+        color: #e1a221;
+        font-weight: 500;
+    }
+
+    p {
+        font-size: 15px;
+    }
+
+    img {
+        text-align:center;
+        height: 50px;
+    }
+}
+
+.card2 {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    width: 30%;
+    height: 90px;
+    background-color: #fff;
+    box-shadow: 0px 0px 5px 0px;
+
+    border-radius: 10px;
+
+    span {
+        font-size: 30px;
+        color: #12a54d;
+        font-weight: 500;
+    }
+
+    p {
+        font-size: 15px;
+    }
+
+    img {
+        text-align:center;
+        height: 50px;
+    }
+}
+
+.card3 {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    width: 30%;
+    height: 90px;
+    background-color: #fff;
+    box-shadow: 0px 0px 5px 0px;
+
+    border-radius: 10px;
+
+    span {
+        font-size: 30px;
+        color: #dc4c65;
+        font-weight: 500;
+    }
+
+    p {
+        font-size: 15px;
+    }
+
+    img {
+        color: #53b4d4;
+        text-align:center;
+        height: 50px;
+    }
+}
+
+// 2 - 
+
+.card4 {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    width: 30%;
+    height: 90px;
+    background-color: #fff;
+    box-shadow: 0px 0px 5px 0px;
+
+    border-radius: 10px;
+
+    span {
+        font-size: 30px;
+        font-weight: 500;
+        color: #53b4d4;
+    }
+
+    p {
+        font-size: 15px;
+    }
+
+    img {
+        color: #53b4d4;
+        text-align:center;
+        height: 50px;
+    }
+}
+
+.card5 {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    width: 30%;
+    height: 90px;
+    background-color: #fff;
+    box-shadow: 0px 0px 5px 0px;
+
+    border-radius: 10px;
+
+    span {
+        font-size: 30px;
+        color: #e1a221;
+        font-weight: 500;
+    }
+
+    p {
+        font-size: 15px;
+    }
+
+    img {
+        text-align:center;
+        height: 50px;
+    }
+}
+
+.card6 {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    width: 30%;
+    height: 90px;
+    background-color: #fff;
+    box-shadow: 0px 0px 5px 0px;
+
+    border-radius: 10px;
+
+    span {
+        font-size: 30px;
+        color: #12a54d;
+        font-weight: 500;
+    }
+
+    p {
+        font-size: 15px;
+    }
+
+    img {
+        text-align:center;
+        height: 50px;
+    }
+}
+
+.card7 {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    width: 30%;
+    height: 90px;
+    background-color: #fff;
+    box-shadow: 0px 0px 5px 0px;
+
+    border-radius: 10px;
+
+    span {
+        font-size: 30px;
+        color: #dc4c65;
+        font-weight: 500;
+    }
+
+    p {
+        font-size: 15px;
+    }
+
+    img {
+        color: #53b4d4;
+        text-align:center;
+        height: 50px;
+    }
+}
+
+//emp
+
+.emp-cards {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    width: 100%;
+    padding: 10px;
+}
+
+.emp-card1 {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    width: 30%;
+    height: 90px;
+    background-color: #fff;
+    box-shadow: 0px 0px 5px 0px;
+
+    border-radius: 10px;
+
+    span {
+        font-size: 30px;
+        color: #9fa5b1;
+        font-weight: 500;
+    }
+
+    p {
+        font-size: 15px;
+    }
+
+    img {
+        color: #53b4d4;
+        text-align:center;
+        height: 50px;
+    }
+}
+
+.emp-card2 {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    width: 30%;
+    height: 90px;
+    background-color: #fff;
+    box-shadow: 0px 0px 5px 0px;
+
+    border-radius: 10px;
+
+    span {
+        font-size: 30px;
+        color: #dc4c65;
+        font-weight: 500;
+    }
+
+    p {
+        font-size: 15px;
+    }
+
+    img {
+        color: #53b4d4;
+        text-align:center;
+        height: 50px;
+    }
+}
+
+.emp-card3 {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    width: 30%;
+    height: 90px;
+    background-color: #fff;
+    box-shadow: 0px 0px 5px 0px;
+
+    border-radius: 10px;
+
+    span {
+        font-size: 30px;
+        color: #3b7d93;
+        font-weight: 500;
+    }
+
+    p {
+        font-size: 15px;
+    }
+
+    img {
+        color: #53b4d4;
+        text-align:center;
+        height: 50px;
+    }
+}
+
+// pr
+
+.pr-cards{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 10px;
+
+    .pr-card{
+        
+        width: 300px;
+        height: 260px;
+        box-shadow: 0px 0px 7px 0px;
+        border-radius: 10px;
+        padding: 10px 10px;
+        background-color: #ffffff;
+
+        .title{
+
+            h3{
+                text-align: center;
+            }
+        }
+        
+        p{
+            font-size: 15px;
+            font-weight: 500;
+            span{
+                font-size: 14px;
+                font-weight: 400;
+            }
+        }
+
+        .btns{
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+    }
+
+}
