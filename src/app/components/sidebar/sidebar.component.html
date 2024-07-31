@@ -1,19 +1,19 @@
 <div class="sidebar">
   <ul>
-    <li [class.active]="activeLink === 'main'" (click)="setActiveLink('main')">
-      <a routerLink="/main">Главная</a>
+    <li [routerLinkActive]="'active'" [routerLinkActiveOptions]="{exact: true}" [routerLink]="['/main']">
+      <a>Главная</a>
     </li>
-    <li [class.active]="activeLink === 'employees'" (click)="setActiveLink('employees')">
-      <a routerLink="/employees">Сотрудники</a>
+    <li [routerLinkActive]="'active'" [routerLinkActiveOptions]="{exact: true}" [routerLink]="['/employees']">
+      <a>Сотрудники</a>
     </li>
-    <li [class.active]="activeLink === 'passwords'" (click)="setActiveLink('passwords')">
-      <a routerLink="/passwords">Пароли</a>
+    <li [routerLinkActive]="'active'" [routerLinkActiveOptions]="{exact: true}" [routerLink]="['/passwords']">
+      <a>Пароли</a>
     </li>
-    <li [class.active]="activeLink === 'fines'" (click)="setActiveLink('fines')">
-      <a routerLink="/fines">Штрафы</a>
+    <li [routerLinkActive]="'active'" [routerLinkActiveOptions]="{exact: true}" [routerLink]="['/fines']">
+      <a>Штрафы</a>
     </li>
-    <li [class.active]="activeLink === 'consumption'" (click)="setActiveLink('consumption')">
-      <a routerLink="/consumption">Расходы</a>
+    <li [routerLinkActive]="'active'" [routerLinkActiveOptions]="{exact: true}" [routerLink]="['/consumption']">
+      <a>Расходы</a>
     </li>
   </ul>
 </div>
