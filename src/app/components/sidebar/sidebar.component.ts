@@ -9,21 +9,18 @@ import { NavigationEnd, Router } from '@angular/router';
   templateUrl: './sidebar.component.html',
   styleUrl: './sidebar.component.scss'
 })
-export class SidebarComponent implements OnInit {
-  currentUrl: string = '';
+export class SidebarComponent {
+  activeLink !: string;
 
-  constructor(private router: Router) { }
-
-  ngOnInit(): void {
-    // Listen to router events
-    this.router.events.subscribe(event => {
+  constructor(private router: Router) {
+    this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
-        this.currentUrl = event.urlAfterRedirects;
+        this.activeLink = event.urlAfterRedirects.split('/')[1];
       }
     });
   }
 
-  isActive(route: string): boolean {
-    return this.currentUrl === route;
+  setActiveLink(link: string) {
+    this.activeLink = link;
   }
 }
