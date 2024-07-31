@@ -1,32 +1,96 @@
 
-/* Unordered list styling inside the sidebar */
-.sidebar ul {
-  list-style-type: none; /* Remove bullet points */
-  padding: 0; /* Remove padding */
-  margin: 0; /* Remove margin */
+// /* Unordered list styling inside the sidebar */
+// .sidebar ul {
+//   list-style-type: none; /* Remove bullet points */
+//   padding: 0; /* Remove padding */
+//   margin: 0; /* Remove margin */
+// }
+
+// /* List item styling inside the sidebar */
+// .sidebar li {
+//   padding: 8px 14px; /* Padding around each item */
+//   text-align: left; /* Align text to the left */
+//   cursor: pointer;
+// }
+
+// /* Link styling inside the sidebar */
+// .sidebar li a {
+//   padding-left: 10px;
+//   color: #f1f1f1; /* Link color */
+//   text-decoration: none; /* Remove underline */
+//   display: block; /* Make the link block-level */
+// }
+
+// /* Active item styling */
+// .sidebar li.active a {
+//   background-color: #575757; /* Active item background */
+//   color: #ffffff; /* Active item text color */
+// }
+
+// :host {
+//   display: block;
+// }
+
+body {
+  min-height: 100vh;
+  min-height: -webkit-fill-available;
 }
 
-/* List item styling inside the sidebar */
-.sidebar li {
-  padding: 8px 14px; /* Padding around each item */
-  text-align: left; /* Align text to the left */
-  cursor: pointer;
+html {
+  height: -webkit-fill-available;
 }
 
-/* Link styling inside the sidebar */
-.sidebar li a {
-  padding-left: 10px;
-  color: #f1f1f1; /* Link color */
-  text-decoration: none; /* Remove underline */
-  display: block; /* Make the link block-level */
+main {
+  height: 100vh;
+  height: -webkit-fill-available;
+  max-height: 100vh;
+  overflow-x: auto;
+  overflow-y: hidden;
 }
 
-/* Active item styling */
-.sidebar li.active a {
-  background-color: #575757; /* Active item background */
-  color: #ffffff; /* Active item text color */
+.dropdown-toggle { outline: 0; }
+
+.btn-toggle {
+  padding: .25rem .5rem;
+  font-weight: 600;
+  color: var(--bs-emphasis-color);
+  background-color: transparent;
+}
+.btn-toggle:hover,
+.btn-toggle:focus {
+  color: rgba(var(--bs-emphasis-color-rgb), .85);
+  background-color: var(--bs-tertiary-bg);
 }
 
-:host {
-  display: block;
+.btn-toggle::before {
+  width: 1.25em;
+  line-height: 0;
+  content: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='rgba%280,0,0,.5%29' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M5 14l6-6-6-6'/%3e%3c/svg%3e");
+  transition: transform .35s ease;
+  transform-origin: .5em 50%;
+}
+
+[data-bs-theme="dark"] .btn-toggle::before {
+  content: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='rgba%28255,255,255,.5%29' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M5 14l6-6-6-6'/%3e%3c/svg%3e");
+}
+
+.btn-toggle[aria-expanded="true"] {
+  color: rgba(var(--bs-emphasis-color-rgb), .85);
+}
+.btn-toggle[aria-expanded="true"]::before {
+  transform: rotate(90deg);
+}
+
+.btn-toggle-nav a {
+  padding: .1875rem .5rem;
+  margin-top: .125rem;
+  margin-left: 1.25rem;
+}
+.btn-toggle-nav a:hover,
+.btn-toggle-nav a:focus {
+  background-color: var(--bs-tertiary-bg);
+}
+
+.scrollarea {
+  overflow-y: auto;
 }
