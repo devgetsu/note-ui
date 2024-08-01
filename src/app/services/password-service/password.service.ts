@@ -15,24 +15,24 @@ export class PasswordService {
 
   constructor(private _http : HttpClient) { }
 
-  apiUrl = environment.apiUrl + 'api/Project'
+  apiUrl = environment.apiUrl + 'api/Passwords'
 
-  createProject(model: CreatePasswordModel) : Observable<ResponseModel>{
+  createPassword(model: CreatePasswordModel) : Observable<ResponseModel>{
     return this._http.post<ResponseModel>(this.apiUrl, model);
   }
 
-  getProject(): Observable<PasswordModel[]>{
+  getPassword(): Observable<PasswordModel[]>{
     return this._http.get<PasswordModel[]>(this.apiUrl);
   }
 
-  updateProject(model: UpdatePasswordModel): Observable<ResponseModel>{
+  updatePassword(model: UpdatePasswordModel): Observable<ResponseModel>{
     return this._http.put<ResponseModel>(this.apiUrl, model)
   }
-  deleteProject(model: DeletePasswordModel): Observable<ResponseModel> {
+  deletePassword(model: DeletePasswordModel): Observable<ResponseModel> {
     return this._http.delete<ResponseModel>(this.apiUrl, { body: model });
   }
 
-  getProjectById(id:string) : Observable<PasswordModel>{
+  getPasswordById(id:string) : Observable<PasswordModel>{
     return this._http.get<PasswordModel>(this.apiUrl+`/${id}`);
   } 
 }
