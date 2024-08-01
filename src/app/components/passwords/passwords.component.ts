@@ -77,8 +77,9 @@ export class PasswordsComponent implements OnInit{
   }
 
   refresh(): void {
-    this._route.navigateByUrl('/', { skipLocationChange: true }).then(() => {
-      this._route.navigate([this._route.url]);
-    });
+    this._route.navigate(['/passwords']);
+            setTimeout(() => {
+            window.location.reload();
+            }, 1)
   }
 }

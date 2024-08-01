@@ -58,8 +58,9 @@ export class MainComponent implements OnInit {
   }
 
   refresh(): void {
-    this._route.navigateByUrl('/', { skipLocationChange: true }).then(() => {
-      this._route.navigate([this._route.url]);
-    });
+    this._route.navigate(['/main']);
+            setTimeout(() => {
+            window.location.reload();
+            }, 1)
   }
 }
