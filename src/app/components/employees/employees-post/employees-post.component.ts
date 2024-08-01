@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { CreateEmployeeModel } from '../../../interfaces/employee-interfaces/cr-employee';
+import { EmployeeService } from '../../../services/employee-service/employee.service';
 
 @Component({
   selector: 'app-employees-post',
