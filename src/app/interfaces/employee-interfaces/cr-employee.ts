@@ -7,8 +7,4 @@ export interface CreateEmployeeModel {
     salaryDate: string
     employmentDate: string
     percent: number
-    fine ?: number
-    description ?: string
-    fineDate ?: string
-    remainedSalary ?: number
 }

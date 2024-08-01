@@ -1,6 +1,6 @@
 <div class="title">
     <h2>Список сотрудников</h2>
-    <button type="button" class="btn btn-primary">Добавить сотрудника</button>
+    <button type="button" class="btn btn-primary" (click)="changeRoutCreate()">Добавить сотрудника</button>
 </div>
 
 <table class="table table-striped" style="margin-top: 30px;">
@@ -18,27 +18,33 @@
       </tr>
     </thead>
     <tbody>
-    
-    <!-- @for(user of users; track user.id; let i = $index){ -->
+      @for(employee of employees; track employee.id){
         <tr>
-          <!-- <th scope="row">{{ user.id }}</th> -->
-          <!-- <td>{{user.name}}</td> -->
-          <!-- <td>{{user.email}}</td> -->
-          <!-- <td>{{user.role}}</td> -->
-          <th scope="row">Нуриддин</th>
-          <td>Программист</td>
-          <td>2,000,000</td>
-          <td>0</td>
-          <td>0</td>
-          <td>0</td>
-          <td>2,000,000</td>
-          <td>14-08-2024</td>
+          <th scope="row">{{ employee.fullName }}</th>
+          <td>{{employee.position}}</td>
+          <td>{{employee.salary}}</td>
+          <td>{{employee.givenSalary}}</td>
+          <td>{{employee.percent}}</td>
+          <td>{{employee.fine}}</td>
+          <td>{{employee.remainedSalary}}</td>
+          <td>{{employee.salaryDate}}</td>
           <td>
-            <button type="button" class="btn btn-outline-primary">Изменить</button>
-            <button type="button" class="btn btn-danger" style="margin-left: 20px;">Удалить</button>
+            <a
+          class="btn btn-outline-primary"
+          (click)="changeRoutEdit(employee.id)"
+            >
+              Изменить
+            </a>
+            <button
+              type="button"
+              class="btn btn-danger"
+              style="margin-left: 20px"
+              (click)="deleteEmployee(employee.id)"
+            >
+              Удалить
+            </button>
           </td>
         </tr>
-    <!-- } -->
-      
+      }
     </tbody>
   </table>

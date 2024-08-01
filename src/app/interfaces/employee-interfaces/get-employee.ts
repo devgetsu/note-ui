@@ -15,6 +15,4 @@ export interface EmployeeModel {
   description: string
   fineDate: string
   remainedSalary: number
-  
-  projects: ProjectModel[];
 }

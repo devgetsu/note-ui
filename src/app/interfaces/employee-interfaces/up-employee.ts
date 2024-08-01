@@ -12,5 +12,4 @@ export interface UpdateEmployeeModel {
   fine: number
   description: string
   fineDate: string
-  remainedSalary: number
 }
