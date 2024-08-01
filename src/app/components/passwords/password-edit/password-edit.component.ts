@@ -13,54 +13,56 @@ import { ActivatedRoute } from '@angular/router';
   templateUrl: './password-edit.component.html',
   styleUrl: './password-edit.component.scss'
 })
-export class PasswordEditComponent implements OnInit{
-  constructor(private _projectService : ProjectService, private _passwordService : PasswordService, private route: ActivatedRoute) {
-  }
+export class PasswordEditComponent implements OnInit {
+  constructor(
+    private _projectService: ProjectService, 
+    private _passwordService: PasswordService, 
+    private route: ActivatedRoute
+  ) {}
+
+  updateModel: UpdatePasswordModel = {
+    id: '',
+    program: '',
+    login: '',
+    pass: '',
+    projectId: ''
+  };
+
+  projects!: ProjectModel[];
+
   ngOnInit(): void {
     this.changeIdUpdate();
     this.getAllProjects();
     this.getPasswordById(this.updateModel.id);
   }
 
-  getPasswordById(id:string){
-    this._passwordService.getPasswordById(id).subscribe(
-      (data)=>{
-        this.updateModel.login = data.login
-        this.updateModel.pass = data.pass
-        this.updateModel.program = data.program
-        this.updateModel.projectId = data.projectId
-      }
-    )
-  }
-  
-  updateModel : UpdatePasswordModel = {
-    id: '',
-    program: '',
-    login: '',
-    pass: '',
-    projectId: ''
-  }
-  
-  changeIdUpdate() {
-    this.route.paramMap.subscribe(params => {
-      this.updateModel.id != params.get('id');
+  getPasswordById(id: string) {
+    this._passwordService.getPasswordById(id).subscribe(data => {
+      this.updateModel.login = data.login;
+      this.updateModel.pass = data.pass;
+      this.updateModel.program = data.program;
+      this.updateModel.projectId = data.projectId;
     });
   }
 
-  projects !: ProjectModel[];
-  
-  getAllProjects(){
-    this._projectService.getProject().subscribe(
-      (data)=>{
-        this.projects = data;
+  changeIdUpdate() {
+    this.route.paramMap.subscribe(params => {
+      this.updateModel.id = params.get('id') || '';
+      if (this.updateModel.id) {
+        this.getPasswordById(this.updateModel.id);
       }
-    )
+    });
   }
 
-  updatePassword(){
-    this._passwordService.updatePassword(this.updateModel).subscribe(
-      (data)=>{
-        console.log(data);
-      })
+  getAllProjects() {
+    this._projectService.getProject().subscribe(data => {
+      this.projects = data;
+    });
+  }
+
+  updatePassword() {
+    this._passwordService.updatePassword(this.updateModel).subscribe(data => {
+      console.log(data);
+    });
   }
 }
