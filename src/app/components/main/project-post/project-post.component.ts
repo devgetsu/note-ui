@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import { ProjectService } from '../../../services/project-service/project.service';
 import { CreateProjectModel } from '../../../interfaces/project-interfaces/create-pr';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-project-post',
   standalone: true,
-  imports: [],
+  imports: [FormsModule],
   templateUrl: './project-post.component.html',
   styleUrl: './project-post.component.scss'
 })

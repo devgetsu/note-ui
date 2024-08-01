@@ -364,7 +364,7 @@ section {
 
     .pr-card{
         width: 300px;
-        height: 260px;
+        height: 350px;
         box-shadow: 0px 0px 7px 0px;
         border-radius: 10px;
         padding: 10px 10px;
@@ -390,6 +390,18 @@ section {
             display: flex;
             justify-content: center;
             gap: 20px;
+        }
+
+        .date{
+            display: flex;
+
+            .dt1{
+                color: #12a54d;
+            }
+
+            .dt2{
+                color: #dc4c65;
+            }
         }
     }
 
