@@ -1,0 +1,95 @@
+<form (ngSubmit)="updateProject()">
+    <label for="program"
+      >Имя клиента*
+      <input
+        type="text"
+        id="program"
+        name="program"
+        [(ngModel)]="updateModel.clientName"
+        required
+      />
+    </label>
+  
+    <label for="login"
+      >Номер клиента*
+      <input
+        type="text"
+        id="login"
+        name="login"
+        [(ngModel)]="updateModel.phoneNumber"
+        required
+      />
+    </label>
+  
+    <label for="pass"
+      >Название проекта
+      <input
+        type="text"
+        id="pass"
+        name="pass"
+        [(ngModel)]="updateModel.projectName"
+        required
+      />
+    </label>
+
+    <label for="summa"
+      >Сумма*
+      <input
+        type="number"
+        id="summa"
+        name="summa"
+        [(ngModel)]="updateModel.amount"
+        required
+      />
+    </label>
+
+    <label for="target"
+      >Таргет бюджет*
+      <input
+        type="number"
+        id="target"
+        name="target"
+        [(ngModel)]="updateModel.budgetTarget"
+        required
+      />
+    </label>
+
+
+    <label for="poluchili"
+      >Получили*
+      <input
+        type="number"
+        id="poluchili"
+        name="poluchili"
+        [(ngModel)]="updateModel.received"
+        required
+      />
+    </label>
+
+    <label for="st-date"
+      >Дата начала*
+      <input
+        type="date"
+        id="st-date"
+        name="st-date"
+        [(ngModel)]="updateModel.startingDate"
+        required
+      />
+    </label>
+
+    <label for="ed-date"
+      >Дата окончания срока*
+      <input
+        type="date"
+        id="ed-date"
+        name="ed-date"
+        [(ngModel)]="updateModel.endingDate"
+        required
+      />
+    </label>
+
+
+
+    <button type="submit" class="btn btn-primary">Изменить</button>
+  </form>
+  

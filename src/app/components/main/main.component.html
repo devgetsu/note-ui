@@ -95,22 +95,50 @@
         </div>
       </div>
     </div>
-    <button type="button" class="btn btn-primary">Добавить проект</button>
+    <button type="button" class="btn btn-primary" (click)="changeRoutCreate()">
+      Добавить проект
+    </button>
     <div class="projects">
       <div class="pr-cards">
         @for(project of projects;track project.id){
 
         <div class="pr-card">
           <div class="title">
-            <h3>{{project.projectName}}</h3>
+            <h3>{{ project.projectName }}</h3>
           </div>
-          <p>Имя: <span>{{project.clientName}}</span></p>
-          <p>Номер телефона: <span>{{project.phoneNumber}}</span></p>
-          <p>Сумма: <span>{{project.amount}}</span></p>
-          <p>ОСТАТОК: <span>{{project.amount - project.received}}</span></p>
+          <p>
+            Имя: <span>{{ project.clientName }}</span>
+          </p>
+          <p>
+            Номер телефона: <span>{{ project.phoneNumber }}</span>
+          </p>
+          <p>
+            Сумма: <span>{{ project.amount }}</span>
+          </p>
+          <p>
+            ОСТАТОК: <span>{{ project.amount - project.received }}</span>
+          </p>
+          <p>
+            Таргет бюджет: <span>{{ project.budgetTarget }}</span>
+          </p>
+          <p>
+            Получили: <span>{{ project.received }}</span>
+          </p>
+          <div class="date">
+            <p class="dt1">{{ project.startingDate }}</p>
+            <span> - </span>
+            <p class="dt2">{{ project.endingDate }}</p>
+          </div>
           <div class="btns">
-            <a class="btn btn-primary">подробнее</a>
-            <a class="btn btn-success">копировать</a>
+            <a class="btn btn-danger" (click)="deleteProject(project.id)"
+              >Удалить</a
+            >
+            <a class="btn btn-success" (click)="changeRoutEdit(project.id)"
+              >Редактировать</a
+            >
+            <a class="btn btn-info" (click)="copyText(project.phoneNumber)"
+              >Копировать</a
+            >
           </div>
         </div>
         }

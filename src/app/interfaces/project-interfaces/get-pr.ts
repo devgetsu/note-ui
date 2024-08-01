@@ -1,3 +1,6 @@
+import { EmployeeModel } from "../employee-interfaces/get-employee"
+import { PasswordModel } from "../password-interfaces/get-password"
+
 export interface ProjectModel {
     id: string
     clientName: string
@@ -8,7 +11,6 @@ export interface ProjectModel {
     received: number
     startingDate: string
     endingDate: string
-    employeePercent: number[]
-    employees: any[]
-    passwords: any[]
+    employees: EmployeeModel[]
+    passwords: PasswordModel[]
   }

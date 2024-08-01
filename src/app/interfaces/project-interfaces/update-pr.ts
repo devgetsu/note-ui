@@ -8,5 +8,4 @@ export interface UpdateProjectModel {
     received: number
     startingDate: string
     endingDate: string
-    employeePercent: number[]
   }

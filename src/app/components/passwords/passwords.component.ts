@@ -16,7 +16,7 @@ import { Router, RouterModule } from '@angular/router';
 })
 export class PasswordsComponent implements OnInit{
 
-  constructor(private _passwordService : PasswordService, private _projectService : ProjectService, private _route: Router) { }
+  constructor(private _passwordService : PasswordService, private _route: Router) { }
 
   ngOnInit(): void {
     this.getAllPasswords();
@@ -42,7 +42,6 @@ export class PasswordsComponent implements OnInit{
       received: 1,
       startingDate: '',
       endingDate: '',
-      employeePercent: [],
       employees: [],
       passwords: []
     }
@@ -58,6 +57,7 @@ export class PasswordsComponent implements OnInit{
         console.log(data);
       }
     );
+    this.refresh()
   }
 
   changeRoutEdit(id:string){
@@ -74,5 +74,12 @@ export class PasswordsComponent implements OnInit{
         this.passwords = data;
       }
     )
+  }
+
+  refresh(): void {
+    this._route.navigate(['/passwords']);
+            setTimeout(() => {
+            window.location.reload();
+            }, 1)
   }
 }
