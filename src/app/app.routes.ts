@@ -5,9 +5,10 @@ import { EmployeesComponent } from './components/employees/employees.component';
 import { PasswordsComponent } from './components/passwords/passwords.component';
 import { ConsumbtionsComponent } from './components/consumbtions/consumbtions.component';
 import { LoginComponent } from './components/login/login.component';
+import { authGuard } from './guard/auth.guard';
 
 export const routes: Routes = [
-    { path: 'login', component: LoginComponent },
+    { path: 'login', component: LoginComponent, canActivate: [authGuard] },
     { path: 'main', component: MainComponent },
     { path: 'employees', component: EmployeesComponent },
     { path: 'passwords', component: PasswordsComponent },

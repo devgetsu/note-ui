@@ -1,24 +1,24 @@
 <body>
     <div class="wrapper">
-        <header>Login Form</header>
-        <form action="#">
+        <header>Login</header>
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
           <div class="field email">
             <div class="input-area">
-              <input type="text" placeholder="Email Address">
+              <input formControlName="login" type="text" placeholder="Login">
               <i class="icon fas fa-envelope"></i>
-              <i class="error error-icon fas fa-exclamation-circle"></i>
+              <i *ngIf="loginControl?.invalid && loginControl?.touched" class="error error-icon fas fa-exclamation-circle"></i>
             </div>
-            <div class="error error-txt">Email can't be blank</div>
+            <div *ngIf="loginControl?.invalid && loginControl?.touched" class="error error-txt">Login can't be blank</div>
           </div>
           <div class="field password">
             <div class="input-area">
-              <input type="password" placeholder="Password">
+              <input formControlName="password" type="password" placeholder="Password">
               <i class="icon fas fa-lock"></i>
-              <i class="error error-icon fas fa-exclamation-circle"></i>
+              <i *ngIf="passwordControl?.invalid && passwordControl?.touched" class="error error-icon fas fa-exclamation-circle"></i>
             </div>
-            <div class="error error-txt">Password can't be blank</div>
+            <div *ngIf="passwordControl?.invalid && passwordControl?.touched" class="error error-txt">Password can't be blank</div>
           </div>
-          <input type="submit" value="Login">
+          <input type="submit" value="Login" [disabled]="loginForm.invalid">
         </form>
       </div>
 </body>

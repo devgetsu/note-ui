@@ -115,6 +115,10 @@
 <symbol id="consumption" viewBox="0 0 16 16">
 <path d="M7.5 1.018a7 7 0 0 0-4.79 11.566L7.5 7.793zm1 0V7.5h6.482A7 7 0 0 0 8.5 1.018M14.982 8.5H8.207l-4.79 4.79A7 7 0 0 0 14.982 8.5M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8"/>
 </symbol>
+<symbol id="exit" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0z"/>
+  <path fill-rule="evenodd" d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708z"/>
+</symbol>
 </svg>
 
 <main class="d-flex flex-nowrap">
@@ -156,22 +160,16 @@
 </li>
 </ul>
 <hr>
-<div class="dropdown">
-<a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+<a class="d-flex align-items-center text-white text-decoration-none" aria-expanded="false">
   <img src="https://ih1.redbubble.net/image.2955130987.9629/raf,360x360,075,t,fafafa:ca443f4786.jpg" alt="" width="35" height="35" class="rounded-circle me-2">
   <strong>Админ</strong>
+  <a class="nav-link text-white" aria-current="page" style="width: 20px; margin-left: 70px; margin-top: 4px;" (click)="logout()">
+    <svg class="bi pe-none me-2" width="22" height="22"><use xlink:href="#exit"/></svg>
+  </a>
 </a>
-<ul class="dropdown-menu dropdown-menu-dark text-small shadow">
-  <li><a class="dropdown-item" href="#">Новый проект</a></li>
-  <li><a class="dropdown-item" href="#">Профиль</a></li>
-  <li><a class="dropdown-item" href="#">Настройки</a></li>
-  <li><hr class="dropdown-divider"></li>
-  <li><a class="dropdown-item" href="#">Выйти</a></li>
-</ul>
-</div>
+
 </div>
 <div class="b-example-vr"></div>
-
 
 </main>
 </body>
