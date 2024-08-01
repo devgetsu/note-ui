@@ -1,0 +1,102 @@
+<form (ngSubmit)="createEmployee()">
+    <label for="fullName"
+      >Имя
+      <input
+        type="text"
+        id="fullName"
+        name="fullName"
+        [(ngModel)]="createModel.fullName"
+        required
+      />
+    </label>
+  
+    <label for="phoneNumber"
+      >Номер телефона
+      <input
+        type="text"
+        id="phoneNumber"
+        name="phoneNumber"
+        [(ngModel)]="createModel.phoneNumber"
+        required
+      />
+    </label>
+  
+    <label for="position"
+      >Позиция
+      <select
+        class="form-select"
+        aria-label="Default select example"
+        id="position"
+        name="position"
+        [(ngModel)]="createModel.position"
+      >
+        <option>
+          "Директор",
+          "Смм",
+          "Дизайнер",
+          "Мобилограф",
+          "Оператор",
+          "Монтажор",
+          "Отдел продаж"
+        </option>
+      </select>
+    </label>
+
+    <label for="salary"
+      >Зарплата
+      <input
+        type="text"
+        id="salary"
+        name="salary"
+        [(ngModel)]="createModel.salary"
+        required
+      />
+    </label>
+
+    <label for="percent"
+      >Процент
+      <input
+        type="text"
+        id="percent"
+        name="percent"
+        [(ngModel)]="createModel.percent"
+        required
+      />
+    </label>
+
+    <label for="givenSalary"
+      >Полученная зарплата
+      <input
+        type="text"
+        id="givenSalary"
+        name="givenSalary"
+        [(ngModel)]="createModel.givenSalary"
+        required
+      />
+    </label>
+
+    <label for="salaryDate"
+      >Дата зарплаты
+      <input
+        type="text"
+        id="salaryDate"
+        name="salaryDate"
+        [(ngModel)]="createModel.salaryDate"
+        required
+      />
+    </label>
+
+    <label for="employmentDate"
+      >Дата приёма на работу
+      <input
+        type="text"
+        id="employmentDate"
+        name="employmentDate"
+        [(ngModel)]="createModel.employmentDate"
+        required
+      />
+    </label>
+  
+    <button type="submit" class="btn btn-primary">Сохранить</button>
+  </form>
+  
