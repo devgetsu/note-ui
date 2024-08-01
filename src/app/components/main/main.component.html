@@ -106,9 +106,8 @@
           </div>
           <p>Имя: <span>{{project.clientName}}</span></p>
           <p>Номер телефона: <span>{{project.phoneNumber}}</span></p>
-          <p>Сумма: <span>{{project.received}}</span></p>
-          <p>ОСТАТОК: <span>{{project.amount}}</span></p>
-
+          <p>Сумма: <span>{{project.amount}}</span></p>
+          <p>ОСТАТОК: <span>{{project.amount - project.received}}</span></p>
           <div class="btns">
             <a class="btn btn-primary">подробнее</a>
             <a class="btn btn-success">копировать</a>
