@@ -16,7 +16,7 @@ export class ProjectService {
 
   constructor(private _http : HttpClient) { }
 
-  apiUrl = environment.apiUrl + 'api/Project'
+  apiUrl = environment.apiUrl + 'api/Projects'
 
   createProject(model: CreateProjectModel) : Observable<ResponseModel>{
     return this._http.post<ResponseModel>(this.apiUrl, model);
