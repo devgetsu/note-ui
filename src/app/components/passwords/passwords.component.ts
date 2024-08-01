@@ -1,47 +1,29 @@
 import { PasswordModel } from './../../interfaces/password-interfaces/get-password';
-import { ProjectModel } from './../../interfaces/project-interfaces/get-pr';
 import { Component, OnInit } from '@angular/core';
 import { SidebarComponent } from "../sidebar/sidebar.component";
 import { PasswordService } from '../../services/password-service/password.service';
 import { DeletePasswordModel } from '../../interfaces/password-interfaces/delete-password';
-import { CreatePasswordModel } from '../../interfaces/password-interfaces/cr-password';
-import { UpdatePasswordModel } from '../../interfaces/password-interfaces/update-password';
 import { FormsModule } from '@angular/forms';
 import { ProjectService } from '../../services/project-service/project.service';
+import { Router, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-passwords',
   standalone: true,
-  imports: [SidebarComponent, FormsModule],
+  imports: [SidebarComponent, FormsModule,RouterModule],
   templateUrl: './passwords.component.html',
   styleUrl: './passwords.component.scss'
 })
 export class PasswordsComponent implements OnInit{
 
-  constructor(private _passwordService : PasswordService, private _projectService : ProjectService) { }
+  constructor(private _passwordService : PasswordService, private _projectService : ProjectService, private _route: Router) { }
 
   ngOnInit(): void {
     this.getAllPasswords();
-    this.getAllProjects();
   }
 
   deleteModel : DeletePasswordModel = {
     id : ''
-  }
-
-  createModel : CreatePasswordModel = {
-    program: '',
-    login: '',
-    pass: '',
-    projectId: ''
-  }
-
-  updateModel : UpdatePasswordModel = {
-    id: '',
-    program: '',
-    login: '',
-    pass: '',
-    projectId: ''
   }
 
   passwordModel : PasswordModel = {
@@ -66,17 +48,7 @@ export class PasswordsComponent implements OnInit{
     }
   }
 
-  projects !: ProjectModel[];
-
   passwords !: PasswordModel[];
-
-  createPassword(){
-    this._passwordService.createPassword(this.createModel).subscribe(
-      (data)=>{
-        console.log(data);
-      }
-    );
-  }
 
   deletePassword(id:string){
     this.deleteModel.id = id;
@@ -88,20 +60,12 @@ export class PasswordsComponent implements OnInit{
     );
   }
 
-  updatePassword(){
-    this._passwordService.updatePassword(this.updateModel).subscribe(
-      (data)=>{
-        console.log(data);
-      }
-    )
+  changeRoutEdit(id:string){
+    this._route.navigateByUrl(`/passwords-edit/${id}`)
   }
 
-  getPasswordById(id:string){
-    this._passwordService.getPasswordById(id).subscribe(
-      (data)=>{
-        console.log(data)
-      }
-    )
+  changeRoutCreate(){
+    this._route.navigateByUrl(`/passwords-post`)
   }
 
   getAllPasswords(){
@@ -111,16 +75,4 @@ export class PasswordsComponent implements OnInit{
       }
     )
   }
-  getAllProjects(){
-    this._projectService.getProject().subscribe(
-      (data)=>{
-        this.projects = data;
-      }
-    )
-  }
-  
-changeIdUpdate(id:string) {
-    this.updateModel.id = id;
-  }
-
 }
