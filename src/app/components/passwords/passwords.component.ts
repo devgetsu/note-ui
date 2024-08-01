@@ -57,6 +57,7 @@ export class PasswordsComponent implements OnInit{
         console.log(data);
       }
     );
+    this.refresh()
   }
 
   changeRoutEdit(id:string){
@@ -73,5 +74,11 @@ export class PasswordsComponent implements OnInit{
         this.passwords = data;
       }
     )
+  }
+
+  refresh(): void {
+    this._route.navigateByUrl('/', { skipLocationChange: true }).then(() => {
+      this._route.navigate([this._route.url]);
+    });
   }
 }

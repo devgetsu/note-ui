@@ -38,6 +38,7 @@ export class MainComponent implements OnInit {
         console.log(data)
       }
     )
+    this.refresh()
   }
 
   copyText(text: string) {
@@ -54,5 +55,11 @@ export class MainComponent implements OnInit {
 
   changeRoutCreate(){
     this._route.navigateByUrl(`/projects-post`)
+  }
+
+  refresh(): void {
+    this._route.navigateByUrl('/', { skipLocationChange: true }).then(() => {
+      this._route.navigate([this._route.url]);
+    });
   }
 }
