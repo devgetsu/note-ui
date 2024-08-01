@@ -6,12 +6,12 @@ import { PasswordService } from '../../services/password-service/password.servic
 import { DeletePasswordModel } from '../../interfaces/password-interfaces/delete-password';
 import { CreatePasswordModel } from '../../interfaces/password-interfaces/cr-password';
 import { UpdatePasswordModel } from '../../interfaces/password-interfaces/update-password';
-import { FormsModule, NgModel } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-passwords',
   standalone: true,
-  imports: [SidebarComponent,FormsModule],
+  imports: [SidebarComponent, FormsModule],
   templateUrl: './passwords.component.html',
   styleUrl: './passwords.component.scss'
 })
@@ -107,4 +107,9 @@ export class PasswordsComponent implements OnInit{
       }
     )
   }
+  
+changeIdUpdate(id:string) {
+    this.updateModel.id = id;
+  }
+
 }
