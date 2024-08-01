@@ -1,6 +1,5 @@
 export interface CreateEmployeeModel {
     fullName: string
-    userName: string
     phoneNumber: string
     position: string
     salary: number
@@ -8,8 +7,8 @@ export interface CreateEmployeeModel {
     salaryDate: string
     employmentDate: string
     percent: number
-    fine: number
-    description: string
-    fineDate: string
-    remainedSalary: number
+    fine ?: number
+    description ?: string
+    fineDate ?: string
+    remainedSalary ?: number
 }
