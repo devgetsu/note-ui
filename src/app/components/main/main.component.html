@@ -98,20 +98,23 @@
     <button type="button" class="btn btn-primary">Добавить проект</button>
     <div class="projects">
       <div class="pr-cards">
+        @for(project of projects;track project.id){
+
         <div class="pr-card">
           <div class="title">
-            <h3>Salimov</h3>
+            <h3>{{project.projectName}}</h3>
           </div>
-          <p>Имя: <span>Жахонгир</span></p>
-          <p>Номер телефона: <span>+998998179102</span></p>
-          <p>Сумма: <span>240</span></p>
-          <p>ОСТАТОК: <span>240</span></p>
+          <p>Имя: <span>{{project.clientName}}</span></p>
+          <p>Номер телефона: <span>{{project.phoneNumber}}</span></p>
+          <p>Сумма: <span>{{project.received}}</span></p>
+          <p>ОСТАТОК: <span>{{project.amount}}</span></p>
 
           <div class="btns">
             <a class="btn btn-primary">подробнее</a>
             <a class="btn btn-success">копировать</a>
           </div>
         </div>
+        }
       </div>
     </div>
   </div>
