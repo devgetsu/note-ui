@@ -1,8 +1,4 @@
-/* Container for sidebar and main content */
-.container {
-    display: flex; /* Use flexbox to align items */
-  }
-  
+
   /* Sidebar styling */
   app-sidebar {
     position: fixed; /* Fixed position */
@@ -18,3 +14,10 @@
     flex: 1; /* Allow the content area to grow */
   }
   
+  .login-page .main-content {
+    margin-left: 0; /* Remove margin for full-width content */
+    padding: 0px; /* Padding remains as is */
+    width: 100vw; /* Full viewport width */
+    height: 100vh; /* Full viewport height */
+    box-sizing: border-box; /* Include padding in width and height calculations */
+  }

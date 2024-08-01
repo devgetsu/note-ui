@@ -1,36 +1,3 @@
-
-// /* Unordered list styling inside the sidebar */
-// .sidebar ul {
-//   list-style-type: none; /* Remove bullet points */
-//   padding: 0; /* Remove padding */
-//   margin: 0; /* Remove margin */
-// }
-
-// /* List item styling inside the sidebar */
-// .sidebar li {
-//   padding: 8px 14px; /* Padding around each item */
-//   text-align: left; /* Align text to the left */
-//   cursor: pointer;
-// }
-
-// /* Link styling inside the sidebar */
-// .sidebar li a {
-//   padding-left: 10px;
-//   color: #f1f1f1; /* Link color */
-//   text-decoration: none; /* Remove underline */
-//   display: block; /* Make the link block-level */
-// }
-
-// /* Active item styling */
-// .sidebar li.active a {
-//   background-color: #575757; /* Active item background */
-//   color: #ffffff; /* Active item text color */
-// }
-
-// :host {
-//   display: block;
-// }
-
 body {
   min-height: 100vh;
   min-height: -webkit-fill-available;
