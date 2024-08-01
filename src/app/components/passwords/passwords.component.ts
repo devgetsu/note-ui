@@ -7,6 +7,7 @@ import { DeletePasswordModel } from '../../interfaces/password-interfaces/delete
 import { CreatePasswordModel } from '../../interfaces/password-interfaces/cr-password';
 import { UpdatePasswordModel } from '../../interfaces/password-interfaces/update-password';
 import { FormsModule } from '@angular/forms';
+import { ProjectService } from '../../services/project-service/project.service';
 
 @Component({
   selector: 'app-passwords',
@@ -17,10 +18,11 @@ import { FormsModule } from '@angular/forms';
 })
 export class PasswordsComponent implements OnInit{
 
-  constructor(private _passwordService : PasswordService) { }
+  constructor(private _passwordService : PasswordService, private _projectService : ProjectService) { }
 
   ngOnInit(): void {
     this.getAllPasswords();
+    this.getAllProjects();
   }
 
   deleteModel : DeletePasswordModel = {
@@ -64,6 +66,8 @@ export class PasswordsComponent implements OnInit{
     }
   }
 
+  projects !: ProjectModel[];
+
   passwords !: PasswordModel[];
 
   createPassword(){
@@ -104,6 +108,13 @@ export class PasswordsComponent implements OnInit{
     this._passwordService.getPassword().subscribe(
       (data)=>{
         this.passwords = data;
+      }
+    )
+  }
+  getAllProjects(){
+    this._projectService.getProject().subscribe(
+      (data)=>{
+        this.projects = data;
       }
     )
   }
