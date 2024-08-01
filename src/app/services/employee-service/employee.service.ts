@@ -18,7 +18,7 @@ export class EmployeeService {
   apiUrl = environment.apiUrl + 'api/Employees'
 
   createEmployee(model: CreateEmployeeModel) : Observable<ResponseModel>{
-    return this._http.post<ResponseModel>(this.apiUrl, model);
+    return this._http.post<ResponseModel>(this.apiUrl, { body: model});
   }
 
   getEmployee(): Observable<EmployeeModel[]>{
@@ -26,7 +26,7 @@ export class EmployeeService {
   }
 
   updateEmployee(model: UpdateEmployeeModel): Observable<ResponseModel>{
-    return this._http.put<ResponseModel>(this.apiUrl, model)
+    return this._http.put<ResponseModel>(this.apiUrl, { body: model});
   }
   
   deleteEmployee(model: DeleteEmployeeModel): Observable<ResponseModel> {

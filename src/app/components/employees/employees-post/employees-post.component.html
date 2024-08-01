@@ -9,7 +9,7 @@
         required
       />
     </label>
-  
+
     <label for="phoneNumber"
       >Номер телефона
       <input
@@ -30,18 +30,37 @@
         name="position"
         [(ngModel)]="createModel.position"
       >
-        <option>
-          "Директор",
-          "Смм",
-          "Дизайнер",
-          "Мобилограф",
-          "Оператор",
-          "Монтажор",
-          "Отдел продаж"
+        <option value="Директор">
+          Директор
         </option>
+
+        <option value="Смм">
+          Смм
+        </option>
+
+        <option value="Дизайнер">
+          Дизайнер
+        </option>
+
+        <option value="Мобилограф">
+          Мобилограф
+        </option>
+
+        <option value="Оператор">
+          Оператор
+        </option>
+
+        <option value="Монтажор">
+          Монтажор
+        </option>
+
+        <option value="Отдел продаж">
+          Отдел продаж
+        </option>
+
       </select>
     </label>
-
+    
     <label for="salary"
       >Зарплата
       <input
@@ -78,7 +97,7 @@
     <label for="salaryDate"
       >Дата зарплаты
       <input
-        type="text"
+        type="date"
         id="salaryDate"
         name="salaryDate"
         [(ngModel)]="createModel.salaryDate"
@@ -89,7 +108,7 @@
     <label for="employmentDate"
       >Дата приёма на работу
       <input
-        type="text"
+        type="date"
         id="employmentDate"
         name="employmentDate"
         [(ngModel)]="createModel.employmentDate"
