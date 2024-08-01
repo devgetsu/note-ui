@@ -1,3 +1,4 @@
+import { MatDialogModule } from '@angular/material/dialog';
 import { Component, OnInit } from '@angular/core';
 import { NavigationEnd, Router, RouterOutlet } from '@angular/router';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
@@ -6,7 +7,7 @@ import { CommonModule, NgIf } from '@angular/common';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, SidebarComponent, NgIf, CommonModule],
+  imports: [RouterOutlet, SidebarComponent, NgIf, CommonModule,MatDialogModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
