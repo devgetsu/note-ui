@@ -1,6 +1,6 @@
 <div class="title">
     <h2>Список расходов</h2>
-    <button type="button" class="btn btn-primary">Добавить расход</button>
+    <button type="button" class="btn btn-primary" (click)="changeRoutCreate()">Добавить расход</button>
 </div>
 
 <table class="table table-striped" style="margin-top: 30px;">
@@ -13,22 +13,28 @@
       </tr>
     </thead>
     <tbody>
-    
-    <!-- @for(user of users; track user.id; let i = $index){ -->
+      @for(consumption of consumptions;track consumption.id){
         <tr>
-          <!-- <th scope="row">{{ user.id }}</th> -->
-          <!-- <td>{{user.name}}</td> -->
-          <!-- <td>{{user.email}}</td> -->
-          <!-- <td>{{user.role}}</td> -->
-          <th scope="row">Аренда офиса</th>
-          <td></td>
-          <td>20,000,000</td>
+          <th scope="row">{{ consumption.whyNeeded }}</th>
+          <td>{{ consumption.description }}</td>
+          <td>{{ consumption.amount }}</td>
           <td>
-            <button type="button" class="btn btn-outline-primary">Изменить</button>
-            <button type="button" class="btn btn-danger" style="margin-left: 20px;">Удалить</button>
+            <a
+              class="btn btn-outline-primary"
+              (click)="changeRoutEdit(consumption.id)"
+            >
+              Изменить
+            </a>
+            <button
+              type="button"
+              class="btn btn-danger"
+              style="margin-left: 20px"
+              (click)="deleteConsumption(consumption.id)">
+              Удалить
+            </button>
           </td>
         </tr>
-    <!-- } -->
+      }
       
     </tbody>
   </table>

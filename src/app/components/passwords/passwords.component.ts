@@ -10,7 +10,7 @@ import { Router, RouterModule } from '@angular/router';
 @Component({
   selector: 'app-passwords',
   standalone: true,
-  imports: [SidebarComponent, FormsModule,RouterModule],
+  imports: [SidebarComponent, FormsModule, RouterModule],
   templateUrl: './passwords.component.html',
   styleUrl: './passwords.component.scss'
 })

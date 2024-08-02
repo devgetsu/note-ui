@@ -1,1 +1,36 @@
-<p>consumption-update works!</p>
+<form (ngSubmit)="updateConsumption()">
+    <label for="whyNeeded"
+      >Причина
+      <input
+        type="text"
+        id="whyNeeded"
+        name="whyNeeded"
+        [(ngModel)]="updateModel.whyNeeded"
+        required
+      />
+    </label>
+  
+    <label for="description"
+      >Описание
+      <input
+        type="text"
+        id="description"
+        name="description"
+        [(ngModel)]="updateModel.description"
+      />
+    </label>
+  
+    <label for="amount"
+      >Сумма
+      <input
+        type="number"
+        id="amount"
+        name="amount"
+        [(ngModel)]="updateModel.amount"
+        required
+      />
+    </label>
+  
+    <button type="submit" class="btn btn-primary">Изменить</button>
+  </form>
+  

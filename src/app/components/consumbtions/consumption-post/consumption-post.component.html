@@ -1,1 +1,36 @@
-<p>consumption-post works!</p>
+<form (ngSubmit)="createConsumption()">
+    <label for="whyNeeded"
+      >Причина
+      <input
+        type="text"
+        id="whyNeeded"
+        name="whyNeeded"
+        [(ngModel)]="createModel.whyNeeded"
+        required
+      />
+    </label>
+  
+    <label for="description"
+      >Описание
+      <input
+        type="text"
+        id="description"
+        name="description"
+        [(ngModel)]="createModel.description"
+      />
+    </label>
+  
+    <label for="amount"
+      >Сумма
+      <input
+        type="number"
+        id="amount"
+        name="amount"
+        [(ngModel)]="createModel.amount"
+        required
+      />
+    </label>
+  
+    <button type="submit" class="btn btn-primary">Сохранить</button>
+  </form>
+  
