@@ -4,7 +4,7 @@
       <div class="cards">
         <div class="card0">
           <div class="texts">
-            <span>4,320 $</span>
+            <span> {{ cardData.projectMoney | number:'1.0-0' }} $</span>
             <p>Деньги от проекта</p>
           </div>
           <img src="../../../assets/images/currency-dollar.svg" alt="$" />
@@ -12,7 +12,7 @@
 
         <div class="card1">
           <div class="texts">
-            <span>680 $</span>
+            <span> {{ cardData.targetAmount | number:'1.0-0' }} $</span>
             <p>Таргет сумма</p>
           </div>
           <img src="../../../assets/images/bullseye.svg" alt="$" />
@@ -20,7 +20,7 @@
 
         <div class="card2">
           <div class="texts">
-            <span>1,180 $</span>
+            <span> {{ cardData.receivedMoney | number:'1.0-0' }} $</span>
             <p>Получены деньги</p>
           </div>
           <img src="../../../assets/images/cash.svg" alt="$" />
@@ -28,7 +28,7 @@
 
         <div class="card3">
           <div class="texts">
-            <span>3,200 $</span>
+            <span> {{ cardData.remainingMoney | number:'1.0-0' }} $</span>
             <p>Оставшиеся деньги</p>
           </div>
           <img src="../../../assets/images/piggy-bank-fill.svg" alt="$" />
@@ -74,7 +74,7 @@
       <div class="emp-cards">
         <div class="emp-card1">
           <div class="texts">
-            <span>11</span>
+            <span> {{ cardData.projectsCount }} </span>
             <p>Количество проектов</p>
           </div>
           <img src="../../../assets/images/inbox-fill.svg" alt="$" />
