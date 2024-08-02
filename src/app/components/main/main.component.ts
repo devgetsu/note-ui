@@ -4,6 +4,8 @@ import { ProjectService } from '../../services/project-service/project.service';
 import { ProjectModel } from '../../interfaces/project-interfaces/get-pr';
 import { DeleteProjectModel } from '../../interfaces/project-interfaces/delete-pr';
 import { DecimalPipe } from '@angular/common';
+import { EmployeeService } from '../../services/employee-service/employee.service';
+import { ConsumptionService } from '../../services/consumption-service/consumption.service';
 
 @Component({
   selector: 'app-main',
@@ -14,10 +16,12 @@ import { DecimalPipe } from '@angular/common';
 })
 export class MainComponent implements OnInit {
   
-  constructor(private _projectService : ProjectService, private _router : Router){}
+  constructor(private _projectService : ProjectService, private _employeeService: EmployeeService, private _consumptionService: ConsumptionService, private _router : Router){}
 
   ngOnInit(): void {
     this.getAllProjects();
+    this.getAllEmployees();
+    this.getAllConsumption();
   }
 
   cardData: any = {
@@ -55,6 +59,28 @@ export class MainComponent implements OnInit {
         this.cardData.receivedMoney = this.sumField(data, 'received')
         this.cardData.remainingMoney = this.cardData.projectMoney - this.cardData.receivedMoney
         this.cardData.projectsCount = data.length;
+      }
+    )
+  }
+
+  getAllEmployees(){
+    this._employeeService.getEmployee().subscribe(
+      (data)=>{
+
+        this.cardData.salaryEmployee = this.sumField(data, 'salary')
+        this.cardData.fines = this.sumField(data, 'fine')
+        this.cardData.remainingSalary = this.sumField(data, 'remainedSalary')
+        this.cardData.employeesCount = data.length
+        this.cardData.salaryPercentage = this.sumField(data, 'percent')
+      }
+    )
+  }
+
+  getAllConsumption(){
+    this._consumptionService.getConsumption().subscribe(
+      (data)=>{
+
+        this.cardData.expenses = this.sumField(data, 'amount')
       }
     )
   }

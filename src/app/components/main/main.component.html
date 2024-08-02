@@ -38,7 +38,7 @@
       <div class="cards1">
         <div class="card4">
           <div class="texts">
-            <span>4,000,000</span>
+            <span> {{ cardData.salaryEmployee | number:'1.0-0' }} </span>
             <p>Зарплата сотрудника</p>
           </div>
           <img src="../../../assets/images/credit-card-2-back.svg" alt="$" />
@@ -46,7 +46,7 @@
 
         <div class="card5">
           <div class="texts">
-            <span>1,835,000</span>
+            <span> {{ cardData.fines | number:'1.0-0' }} </span>
             <p>Штрафы</p>
           </div>
           <img src="../../../assets/images/dislike-svgrepo-com.svg" alt="$" />
@@ -54,7 +54,7 @@
 
         <div class="card6">
           <div class="texts">
-            <span>665,000</span>
+            <span> {{ cardData.remainingSalary | number:'1.0-0' }} </span>
             <p>Оставшаяся зарплата</p>
           </div>
           <img src="../../../assets/images/safe2-fill.svg" alt="$" />
@@ -62,7 +62,7 @@
 
         <div class="card7">
           <div class="texts">
-            <span>26,200,000</span>
+            <span> {{ cardData.expenses | number:'1.0-0' }} </span>
             <p>Расходы</p>
           </div>
           <img src="../../../assets/images/receipt.svg" alt="$" />
@@ -81,14 +81,14 @@
         </div>
         <div class="emp-card2">
           <div class="texts">
-            <span>2</span>
+            <span> {{ cardData.employeesCount }} </span>
             <p>Количество сотрудников</p>
           </div>
           <img src="../../../assets/images/people-fill.svg" alt="$" />
         </div>
         <div class="emp-card3">
           <div class="texts">
-            <span>0</span>
+            <span> {{ cardData.salaryPercentage }} </span>
             <p>Зарплата в процентах</p>
           </div>
           <img src="../../../assets/images/percent-svgrepo-com.svg" alt="$" />
