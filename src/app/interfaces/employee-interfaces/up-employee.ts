@@ -8,4 +8,7 @@ export interface UpdateEmployeeModel {
   salaryDate: string
   employmentDate: string
   percent: number
+  fine: number
+  description: string
+  fineDate: string
 }

@@ -12,6 +12,10 @@ import { EmployeesUpdateComponent } from './components/employees/employees-updat
 import { EmployeesPostComponent } from './components/employees/employees-post/employees-post.component';
 import { ProjectEditComponent } from './components/main/project-edit/project-edit.component';
 import { ProjectPostComponent } from './components/main/project-post/project-post.component';
+import { FineUpdateComponent } from './components/fine/fine-update/fine-update.component';
+import { FinePostComponent } from './components/fine/fine-post/fine-post.component';
+import { ConsumptionUpdateComponent } from './components/consumbtions/consumption-update/consumption-update.component';
+import { ConsumptionPostComponent } from './components/consumbtions/consumption-post/consumption-post.component';
 
 export const routes: Routes = [
     { path: 'login', component: LoginComponent, canActivate: [authGuard] },
@@ -25,6 +29,10 @@ export const routes: Routes = [
     { path: 'projects-post', component : ProjectPostComponent},
     { path: 'projects-edit/:id', component: ProjectEditComponent},
     { path: 'fines', component: FineComponent },
+    { path: 'fines-edit/:id', component: FineUpdateComponent },
+    { path: 'fines-post', component: FinePostComponent },
     { path: 'consumption', component: ConsumbtionsComponent },
+    { path: 'consumption-edit/:id', component: ConsumptionUpdateComponent },
+    { path: 'consumption-post', component: ConsumptionPostComponent },
     { path: '', redirectTo: 'main', pathMatch: 'full' }
 ];

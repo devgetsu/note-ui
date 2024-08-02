@@ -1,1 +1,53 @@
-<p>fine-post works!</p>
+<form (ngSubmit)="getById(updateModel.id)">
+    <label for="fullName"
+      >Сотрудник
+      <select
+        class="form-select"
+        aria-label="Default select example"
+        id="fullName"
+        name="fullName"
+        [(ngModel)]="updateModel.id"
+      >
+        @for(employee of employees; track employee.id){
+        <option [value]="employee.id">
+          {{ employee.fullName }}
+        </option>
+        }
+      </select>
+    </label>
+    
+    <label for="fine"
+      >Сумма
+      <input
+        type="number"
+        id="fine"
+        name="fine"
+        [(ngModel)]="updateModel.fine"
+        required
+      />
+    </label>
+
+    <label for="fineDate"
+      >Дата штрафа
+      <input
+        type="date"
+        id="fineDate"
+        name="fineDate"
+        [(ngModel)]="updateModel.fineDate"
+        required
+      />
+    </label>
+
+    <label for="description"
+      >Причина
+      <input
+        type="text"
+        id="description"
+        name="description"
+        [(ngModel)]="updateModel.description"
+      />
+    </label>
+  
+    <button type="submit" class="btn btn-primary">Сохранить</button>
+  </form>
+  

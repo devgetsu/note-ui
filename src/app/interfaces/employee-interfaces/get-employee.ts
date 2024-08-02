@@ -1,5 +1,3 @@
-import { ProjectModel } from "../project-interfaces/get-pr"
-
 export interface EmployeeModel {
   id: string
   fullName: string

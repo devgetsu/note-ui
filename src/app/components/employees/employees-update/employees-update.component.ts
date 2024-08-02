@@ -29,11 +29,13 @@ export class EmployeesUpdateComponent implements OnInit{
     givenSalary: 0,
     salaryDate: '',
     employmentDate: '',
-    percent: 0
+    percent: 0,
+    fine: 0,
+    description: '',
+    fineDate: '',
   }
 
   updateEmployee(){
-    console.log(this.updateModel)
     this._employeeService.updateEmployee(this.updateModel).subscribe(
       (data)=>{
         console.log(data)
