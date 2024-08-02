@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { CreateEmployeeModel } from '../../../interfaces/employee-interfaces/cr-employee';
 import { EmployeeService } from '../../../services/employee-service/employee.service';
 import { FormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-employees-post',
@@ -12,7 +13,7 @@ import { FormsModule } from '@angular/forms';
 })
 export class EmployeesPostComponent {
 
-  constructor(private _employeeService : EmployeeService){}
+  constructor(private _employeeService : EmployeeService, private _router: Router){}
 
   createModel : CreateEmployeeModel = {
     fullName: '',
@@ -26,9 +27,14 @@ export class EmployeesPostComponent {
   }
 
   createEmployee(){
+    console.log(this.createModel)
     this._employeeService.createEmployee(this.createModel).subscribe(
       (data)=>{
         console.log(data);
+        this._router.navigate(['/employees']);
+            setTimeout(() => {
+            window.location.reload();
+            }, 1)
       }
     );
   }

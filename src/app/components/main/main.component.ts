@@ -12,7 +12,7 @@ import { DeleteProjectModel } from '../../interfaces/project-interfaces/delete-p
   styleUrl: './main.component.scss'
 })
 export class MainComponent implements OnInit {
-  constructor(private _projectService : ProjectService, private _route : Router){}
+  constructor(private _projectService : ProjectService, private _router : Router){}
   ngOnInit(): void {
     this.getAllProjects();
   }
@@ -36,9 +36,12 @@ export class MainComponent implements OnInit {
     this._projectService.deleteProject(this.deleteModel).subscribe(
       (data) =>{
         console.log(data)
+        this._router.navigate(['/main']);
+            setTimeout(() => {
+            window.location.reload();
+            }, 1)
       }
     )
-    this.refresh()
   }
 
   copyText(text: string) {
@@ -50,17 +53,10 @@ export class MainComponent implements OnInit {
   }
 
   changeRoutEdit(id:string){
-    this._route.navigateByUrl(`/projects-edit/${id}`)
+    this._router.navigateByUrl(`/projects-edit/${id}`)
   }
 
   changeRoutCreate(){
-    this._route.navigateByUrl(`/projects-post`)
-  }
-
-  refresh(): void {
-    this._route.navigate(['/main']);
-            setTimeout(() => {
-            window.location.reload();
-            }, 1)
+    this._router.navigateByUrl(`/projects-post`)
   }
 }

@@ -3,7 +3,6 @@ import { ProjectModel } from "../project-interfaces/get-pr"
 export interface EmployeeModel {
   id: string
   fullName: string
-  userName: string
   phoneNumber: string
   position: string
   salary: number

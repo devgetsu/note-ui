@@ -4,6 +4,7 @@ import { ProjectModel } from '../../../interfaces/project-interfaces/get-pr';
 import { ProjectService } from '../../../services/project-service/project.service';
 import { CreatePasswordModel } from '../../../interfaces/password-interfaces/cr-password';
 import { FormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-password-post',
@@ -13,7 +14,7 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './password-post.component.scss'
 })
 export class PasswordPostComponent implements OnInit {
-  constructor(private _passwordService : PasswordService, private _projectService : ProjectService){}
+  constructor(private _passwordService : PasswordService, private _projectService : ProjectService, private _router: Router){}
   ngOnInit(): void {
     this.getAllProjects();
   }
@@ -32,6 +33,10 @@ export class PasswordPostComponent implements OnInit {
     this._passwordService.createPassword(this.createModel).subscribe(
       (data)=>{
         console.log(data);
+        this._router.navigate(['/passwords']);
+            setTimeout(() => {
+            window.location.reload();
+            }, 1)
       }
     );
   }
@@ -44,6 +49,4 @@ export class PasswordPostComponent implements OnInit {
       }
     )
   }
-  
-  
 }

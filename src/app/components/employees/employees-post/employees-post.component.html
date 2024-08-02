@@ -30,6 +30,10 @@
         name="position"
         [(ngModel)]="createModel.position"
       >
+        <option value="">
+          -----
+        </option>
+
         <option value="Директор">
           Директор
         </option>
@@ -64,7 +68,7 @@
     <label for="salary"
       >Зарплата
       <input
-        type="text"
+        type="number"
         id="salary"
         name="salary"
         [(ngModel)]="createModel.salary"
@@ -75,7 +79,7 @@
     <label for="percent"
       >Процент
       <input
-        type="text"
+        type="number"
         id="percent"
         name="percent"
         [(ngModel)]="createModel.percent"
@@ -86,7 +90,7 @@
     <label for="givenSalary"
       >Полученная зарплата
       <input
-        type="text"
+        type="number"
         id="givenSalary"
         name="givenSalary"
         [(ngModel)]="createModel.givenSalary"

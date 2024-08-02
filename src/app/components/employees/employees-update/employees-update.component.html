@@ -1,1 +1,125 @@
-<p>employees-update works!</p>
+<form (ngSubmit)="updateEmployee()">
+    <label for="fullName"
+      >Имя
+      <input
+        type="text"
+        id="fullName"
+        name="fullName"
+        [(ngModel)]="updateModel.fullName"
+        required
+      />
+    </label>
+
+    <label for="phoneNumber"
+      >Номер телефона
+      <input
+        type="text"
+        id="phoneNumber"
+        name="phoneNumber"
+        [(ngModel)]="updateModel.phoneNumber"
+        required
+      />
+    </label>
+  
+    <label for="position"
+      >Позиция
+      <select
+        class="form-select"
+        aria-label="Default select example"
+        id="position"
+        name="position"
+        [(ngModel)]="updateModel.position"
+      >
+        <option value="">
+          -----
+        </option>
+
+        <option value="Директор">
+          Директор
+        </option>
+
+        <option value="Смм">
+          Смм
+        </option>
+
+        <option value="Дизайнер">
+          Дизайнер
+        </option>
+
+        <option value="Мобилограф">
+          Мобилограф
+        </option>
+
+        <option value="Оператор">
+          Оператор
+        </option>
+
+        <option value="Монтажор">
+          Монтажор
+        </option>
+
+        <option value="Отдел продаж">
+          Отдел продаж
+        </option>
+
+      </select>
+    </label>
+    
+    <label for="salary"
+      >Зарплата
+      <input
+        type="number"
+        id="salary"
+        name="salary"
+        [(ngModel)]="updateModel.salary"
+        required
+      />
+    </label>
+
+    <label for="percent"
+      >Процент
+      <input
+        type="number"
+        id="percent"
+        name="percent"
+        [(ngModel)]="updateModel.percent"
+        required
+      />
+    </label>
+
+    <label for="givenSalary"
+      >Полученная зарплата
+      <input
+        type="number"
+        id="givenSalary"
+        name="givenSalary"
+        [(ngModel)]="updateModel.givenSalary"
+        required
+      />
+    </label>
+
+    <label for="salaryDate"
+      >Дата зарплаты
+      <input
+        type="date"
+        id="salaryDate"
+        name="salaryDate"
+        [(ngModel)]="updateModel.salaryDate"
+        required
+      />
+    </label>
+
+    <label for="employmentDate"
+      >Дата приёма на работу
+      <input
+        type="date"
+        id="employmentDate"
+        name="employmentDate"
+        [(ngModel)]="updateModel.employmentDate"
+        required
+      />
+    </label>
+  
+    <button type="submit" class="btn btn-primary">Изменить</button>
+  </form>
+  

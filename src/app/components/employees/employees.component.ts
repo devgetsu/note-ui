@@ -13,7 +13,7 @@ import { EmployeeModel } from '../../interfaces/employee-interfaces/get-employee
 })
 export class EmployeesComponent implements OnInit{
 
-  constructor(private _employeeService : EmployeeService, private _route: Router) { }
+  constructor(private _employeeService : EmployeeService, private _router: Router) { }
 
   ngOnInit(): void {
     this.getAllEmployees();
@@ -26,7 +26,6 @@ export class EmployeesComponent implements OnInit{
   employeeModel : EmployeeModel = {
     id: '',
     fullName: '',
-    userName: '',
     phoneNumber: '',
     position: '',
     salary: 0,
@@ -48,16 +47,20 @@ export class EmployeesComponent implements OnInit{
     this._employeeService.deleteEmployee(this.deleteModel).subscribe(
       (data)=>{
         console.log(data);
+        this._router.navigate(['/employees']);
+            setTimeout(() => {
+            window.location.reload();
+            }, 1)
       }
     );
   }
 
   changeRoutEdit(id:string){
-    this._route.navigateByUrl(`/employees-edit/${id}`)
+    this._router.navigateByUrl(`/employees-edit/${id}`)
   }
 
   changeRoutCreate(){
-    this._route.navigateByUrl(`/employees-post`)
+    this._router.navigateByUrl(`/employees-post`)
   }
 
   getAllEmployees(){

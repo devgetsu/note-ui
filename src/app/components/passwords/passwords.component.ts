@@ -16,7 +16,7 @@ import { Router, RouterModule } from '@angular/router';
 })
 export class PasswordsComponent implements OnInit{
 
-  constructor(private _passwordService : PasswordService, private _route: Router) { }
+  constructor(private _passwordService : PasswordService, private _router: Router) { }
 
   ngOnInit(): void {
     this.getAllPasswords();
@@ -55,17 +55,20 @@ export class PasswordsComponent implements OnInit{
     this._passwordService.deletePassword(this.deleteModel).subscribe(
       (data)=>{
         console.log(data);
+        this._router.navigate(['/passwords']);
+            setTimeout(() => {
+            window.location.reload();
+            }, 1)
       }
     );
-    this.refresh()
   }
 
   changeRoutEdit(id:string){
-    this._route.navigateByUrl(`/passwords-edit/${id}`)
+    this._router.navigateByUrl(`/passwords-edit/${id}`)
   }
 
   changeRoutCreate(){
-    this._route.navigateByUrl(`/passwords-post`)
+    this._router.navigateByUrl(`/passwords-post`)
   }
 
   getAllPasswords(){
@@ -74,12 +77,5 @@ export class PasswordsComponent implements OnInit{
         this.passwords = data;
       }
     )
-  }
-
-  refresh(): void {
-    this._route.navigate(['/passwords']);
-            setTimeout(() => {
-            window.location.reload();
-            }, 1)
   }
 }

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ProjectService } from '../../../services/project-service/project.service';
 import { UpdateProjectModel } from '../../../interfaces/project-interfaces/update-pr';
 import { FormsModule } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-project-edit',
@@ -13,7 +13,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class ProjectEditComponent implements OnInit{
 
-  constructor(private _projectService : ProjectService,  private route: ActivatedRoute){ }
+  constructor(private _projectService : ProjectService,  private route: ActivatedRoute, private _router: Router){ }
   
   ngOnInit(): void {
     this.changeIdUpdate();
@@ -36,6 +36,10 @@ export class ProjectEditComponent implements OnInit{
     this._projectService.updateProject(this.updateModel).subscribe(
       (data)=>{
         console.log(data)
+        this._router.navigate(['/main']);
+            setTimeout(() => {
+            window.location.reload();
+            }, 1)
       }
     )
   }

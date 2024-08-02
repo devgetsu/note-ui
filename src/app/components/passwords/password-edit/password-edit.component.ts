@@ -4,7 +4,7 @@ import { PasswordService } from '../../../services/password-service/password.ser
 import { UpdatePasswordModel } from '../../../interfaces/password-interfaces/update-password';
 import { FormsModule } from '@angular/forms';
 import { ProjectModel } from '../../../interfaces/project-interfaces/get-pr';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-password-edit',
@@ -17,7 +17,8 @@ export class PasswordEditComponent implements OnInit {
   constructor(
     private _projectService: ProjectService, 
     private _passwordService: PasswordService, 
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private _router: Router
   ) {}
 
   updateModel: UpdatePasswordModel = {
@@ -63,6 +64,10 @@ export class PasswordEditComponent implements OnInit {
   updatePassword() {
     this._passwordService.updatePassword(this.updateModel).subscribe(data => {
       console.log(data);
+      this._router.navigate(['/passwords']);
+            setTimeout(() => {
+            window.location.reload();
+            }, 1)
     });
   }
 }
